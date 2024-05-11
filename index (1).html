@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Comfy Channel</title>
+    <style>
+        html,
+        body {
+        height: 100%;
+        margin: 0;
+        background-image: url("5015.png");
+        background-repeat: repeat;
+        }
+        .container {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .player {
+          width: 640px;
+          height: 360px;
+        }
+        .player div {
+          display: inline-block;
+          position: relative;
+          z-index : 1;
+        }
+        .player div #my-video {
+        /* border: 1px red solid;  */
+        display: block; 
+        }
+        .player div + #my-video { 
+          position: absolute;
+          z-index: 0;
+          top: 97px;
+          right:110px; 
+        }
+        #my-video{
+          height:160px;
+          width:300px;
+        }
+    </style>
+    <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="player">
+        <div>
+          <div style="width: 640px; pointer-events: none;">
+              <img src="jiru_wide.png" alt="" style="width: 640px; pointer-events: none;"/>
+          </div>
+          <video id='my-video' class='video-js' controls autoplay preload='auto' width='640' data-setup='{"controlBar":{"fullscreenToggle":false}}' >
+            <source src='https://tv.verichip.net/hls/stream.m3u8' type='application/x-mpegURL'>
+        </video>
+        </div>
+      </div>
+    </div>
+    <script src='https://vjs.zencdn.net/7.7.6/video.js'></script>
+  </body>
+</html>
