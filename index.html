@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>VenithTV</title>
     <meta property="og:type" content="summary">
-    <meta property="og:site_name" content="Venith Television">
-    <meta property="og:title" content="Powered by the Venith Network">
-    <meta property="og:description" content="Broadcasting 24/7 - Made by MattTheTekie!">
+    <meta property="og:site_name" content="VenithTV">
+    <meta property="og:title" content="VenithTV">
+    <meta property="og:description" content="Welcome to VenithTV. Made by MattTheTekie!">
     <meta property="og:image" content="https://venith.net/media/vlogo.png">
     <meta property="og:image:alt" content="VenithTV">
     <meta property="og:url" content="http://tv.venith.net">
@@ -18,57 +18,63 @@
     <style>
         html,
         body {
-            height: 100%;
-            margin: 0;
-            background-image: url("5015.png");
-            background-repeat: repeat;
+        height: 100%;
+        margin: 0;
+        background-image: url("5015.png");
+        background-repeat: repeat;
         }
         .container {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .player {
-            width: 80%;
-            max-width: 640px;
-            margin: auto;
+          width: 640px;
+          height: 360px;
         }
         .player div {
-            display: inline-block;
-            position: relative;
-            z-index: 1;
+          display: inline-block;
+          position: relative;
+          z-index: 1;
         }
-        #my-video-container {
-            margin-bottom: 20px;
+        .player div #my-video {
+        /* border: 1px red solid;  */
+        display: block; 
+        }
+        .player div + #my-video { 
+          position: absolute;
+          z-index: 0;
+          top: 97px;
+          right: 110px; 
         }
         #my-video {
-            width: 100%;
-            height: auto;
+          height: 160px;
+          width: 300px;
         }
-        #odysee-iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
+        .player div + iframe {
+          position: absolute;
+          z-index: 0;
+          top: 97px;
+          right: 110px; 
+          width: 300px;
+          height: 160px;
+          border: none;
         }
     </style>
     <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet">
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="player">
-            <div id="my-video-container">
-                <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}">
-                    <source src="YOUR_VIDEO_SOURCE.mp4" type="video/mp4">
-                    <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and consider upgrading to a
-                        web browser that
-                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
-                </video>
-            </div>
-            <iframe id="odysee-iframe" src="https://odysee.com/$/embed/@mattdoestech726:5/dragon-tv-666:7?r=97pHr9hdWbcNrQ4THxh2E6keyuFJ6UAC&autoplay=true" allowfullscreen></iframe>
+      <div class="player">
+        <div>
+          <div style="width: 640px; pointer-events: none;">
+            <img src="jiru_wide.png" alt="" style="width: 640px; pointer-events: none;"/>
+          </div>
+          <iframe id="odysee-iframe" src="https://odysee.com/$/embed/@mattdoestech726:5/dragon-tv-666:7?r=97pHr9hdWbcNrQ4THxh2E6keyuFJ6UAC&autoplay=true" allowfullscreen></iframe>
         </div>
+      </div>
     </div>
-    <script src="https://vjs.zencdn.net/7.7.6/video.js"></script>
-</body>
+    <script src='https://vjs.zencdn.net/7.7.6/video.js'></script>
+  </body>
 </html>
