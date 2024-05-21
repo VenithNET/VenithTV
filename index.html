@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <title>VenithTV</title>
+    <meta property="og:type" content="summary">
+    <meta property="og:site_name" content="Venith Television">
+    <meta property="og:title" content="Powered by the Venith Network">
+    <meta property="og:description" content="Broadcasting 24/7 - Made by MattTheTekie!">
+    <meta property="og:image" content="https://venith.net/media/vlogo.png">
+    <meta property="og:image:alt" content="VenithTV">
+    <meta property="og:url" content="http://tv.venith.net">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="MattTheTekie + Venith">
     <meta name="description" content="Welcome to VenithTV. Made by MattTheTekie!">
     <meta name="keywords" content="90s Web, 2000s, Political, Digital Cheese, TDK, Venith, Blog, Neocities, 3DSPaint, DSiPaint, Gaming, Web, HTML, CSS, Programming, Email, Tutorials, Guilded, Discord, YouTube, Twitter">
-    <meta name="author" content="MattTheTekie + Venith">
     <link rel="shortcut icon" href="https://venith.net/media/vco.ico">
-    <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet">
-
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             background-image: url("5015.png");
             background-repeat: repeat;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
         }
         .container {
             height: 100%;
@@ -26,35 +30,45 @@
             justify-content: center;
         }
         .player {
+            width: 80%;
+            max-width: 640px;
+            margin: auto;
+        }
+        .player div {
+            display: inline-block;
             position: relative;
-            width: 640px;
-            height: 360px;
+            z-index: 1;
         }
-        .player #my-video {
+        #my-video-container {
+            margin-bottom: 20px;
+        }
+        #my-video {
             width: 100%;
-            height: 100%;
+            height: auto;
         }
-        .video-js .vjs-big-play-button {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        #odysee-iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
         }
     </style>
+    <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="player">
-            <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" data-setup='{}'>
-                <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
-                <p class="vjs-no-js">
-                    To view this video please enable JavaScript, and consider upgrading to a
-                    web browser that
-                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                </p>
-            </video>
+            <div id="my-video-container">
+                <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}">
+                    <source src="YOUR_VIDEO_SOURCE.mp4" type="video/mp4">
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a
+                        web browser that
+                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
+            </div>
+            <iframe id="odysee-iframe" src="https://odysee.com/$/embed/@mattdoestech726:5/dragon-tv-666:7?r=97pHr9hdWbcNrQ4THxh2E6keyuFJ6UAC&autoplay=true" allowfullscreen></iframe>
         </div>
     </div>
-
     <script src="https://vjs.zencdn.net/7.7.6/video.js"></script>
 </body>
 </html>
