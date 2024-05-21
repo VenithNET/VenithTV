@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>VenithTV</title>
     <meta property="og:type" content="summary">
-    <meta property="og:site_name" content="VenithTV">
-    <meta property="og:title" content="VenithTV">
-    <meta property="og:description" content="Welcome to VenithTV. Made by MattTheTekie!">
+    <meta property="og:site_name" content="Venith Television">
+    <meta property="og:title" content="Powered by the Venith Network">
+    <meta property="og:description" content="Broadcasting 24/7 - Made by MattTheTekie!">
     <meta property="og:image" content="https://venith.net/media/vlogo.png">
     <meta property="og:image:alt" content="VenithTV">
     <meta property="og:url" content="http://tv.venith.net">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta name="author" content="MattTheTekie + Venith">
     <meta name="description" content="Welcome to VenithTV. Made by MattTheTekie!">
     <meta name="keywords" content="90s Web, 2000s, Political, Digital Cheese, TDK, Venith, Blog, Neocities, 3DSPaint, DSiPaint, Gaming, Web, HTML, CSS, Programming, Email, Tutorials, Guilded, Discord, YouTube, Twitter">
@@ -36,7 +36,7 @@
         .player div {
           display: inline-block;
           position: relative;
-          z-index: 1;
+          z-index : 1;
         }
         .player div #my-video {
         /* border: 1px red solid;  */
@@ -46,45 +46,25 @@
           position: absolute;
           z-index: 0;
           top: 97px;
-          right: 110px; 
+          right:110px; 
         }
-        #my-video {
-          height: 160px;
-          width: 300px;
-        }
-        .player div + iframe {
-          position: absolute;
-          z-index: 0;
-          top: 97px;
-          right: 110px; 
-          width: 300px;
-          height: 160px;
-          border: none;
+        #my-video{
+          height:160px;
+          width:300px;
         }
     </style>
     <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet">
-    <script>
-      // Function to detect mobile devices and redirect if necessary
-      function checkMobileRedirect() {
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          window.location.href = "https://odysee.com/@mattdoestech726:5/dragon-tv-666:7?r=97pHr9hdWbcNrQ4THxh2E6keyuFJ6UAC&autoplay=true";
-        }
-      }
-      
-      // Call the function on page load
-      window.onload = function() {
-        checkMobileRedirect();
-      };
-    </script>
   </head>
   <body>
     <div class="container">
       <div class="player">
         <div>
           <div style="width: 640px; pointer-events: none;">
-            <img src="jiru_wide.png" alt="" style="width: 640px; pointer-events: none;"/>
+              <img src="jiru_wide.png" alt="" style="width: 640px; pointer-events: none;"/>
           </div>
-          <iframe id="odysee-iframe" src="https://odysee.com/$/embed/@mattdoestech726:5/dragon-tv-666:7?r=97pHr9hdWbcNrQ4THxh2E6keyuFJ6UAC&autoplay=true" allowfullscreen></iframe>
+          <video id='my-video' class='video-js' controls autoplay preload='auto' width='640' data-setup='{"controlBar":{"fullscreenToggle":false}}' >
+            <source src='https://hls.venith.net/memfs/94d77808-cbc6-49d6-b3dc-fdcb9db8be05.m3u8' type='application/x-mpegURL'>
+        </video>
         </div>
       </div>
     </div>
