@@ -10,7 +10,7 @@
     <meta property="og:image" content="https://venith.net/media/vlogo.png">
     <meta property="og:image:alt" content="VenithTV">
     <meta property="og:url" content="http://tv.venith.net">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="MattTheTekie + Venith">
     <meta name="description" content="Welcome to VenithTV. Made by MattTheTekie!">
     <meta name="keywords" content="90s Web, 2000s, Political, Digital Cheese, TDK, Venith, Blog, Neocities, 3DSPaint, DSiPaint, Gaming, Web, HTML, CSS, Programming, Email, Tutorials, Guilded, Discord, YouTube, Twitter">
@@ -63,6 +63,19 @@
         }
     </style>
     <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet">
+    <script>
+      // Function to detect mobile devices and redirect if necessary
+      function checkMobileRedirect() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          window.location.href = "https://odysee.com/@mattdoestech726:5/dragon-tv-666:7?r=97pHr9hdWbcNrQ4THxh2E6keyuFJ6UAC&autoplay=true";
+        }
+      }
+      
+      // Call the function on page load
+      window.onload = function() {
+        checkMobileRedirect();
+      };
+    </script>
   </head>
   <body>
     <div class="container">
